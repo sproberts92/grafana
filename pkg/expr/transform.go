@@ -14,11 +14,12 @@ import (
 
 // Request is similar to plugins.DataQuery but with the Time Ranges is per Query.
 type Request struct {
-	Headers map[string]string
-	Debug   bool
-	OrgId   int64
-	Queries []Query
-	User    *user.SignedInUser
+	Headers             map[string]string
+	Debug               bool
+	OrgId               int64
+	Queries             []Query
+	User                *user.SignedInUser
+	LoadedMetricsReader LoadedMetricsReader
 }
 
 // Query is like plugins.DataSubQuery, but with a a time range, and only the UID
