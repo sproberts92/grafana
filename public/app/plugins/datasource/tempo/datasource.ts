@@ -124,7 +124,7 @@ export class TempoDatasource extends DataSourceWithBackend<TempoQuery, TempoJson
       this._request('/api/status/buildinfo').pipe(
         map((response) => response),
         catchError((error) => {
-          console.log('Failure in retrieving build information', error.data.message);
+          console.error('Failure in retrieving build information', error.data.message);
           return of({ error, data: {} });
         })
       )
